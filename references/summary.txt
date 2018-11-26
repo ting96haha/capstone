@@ -1,0 +1,26 @@
+New approach
+Interrogate sensors using NFC for usability at the cost of flexibility
+
+sensor interrogation - determine whether or not the sensor is working correctly
+
+use NDEF to report sensor data to a cloud through
+smartphone
+
+previous works :
+google - BLE (longer range)
+NFC - no need batteries
+
+approach - 
+NFC device is used.
+sensor data already embedded in the NDEF by the time anti-collision is done between NFC reader and tag. done by an FPGA board to interrogate when a comm. channel is initiated by the smartphone. the NDEF also contains the raw data of the sensor and the webpage address to the cloud. The cloud replies the processed data back to the smartphone.
+
+NDEF - NFC data xchange format, widely used standard defined by the NFC forum
+
+adv. - No smartphone application needed
+reading sensor from NFC also available commercially but require MCU to operate
+
+dis. - harder for the designer
+- not so flexible, I2C bus unused.
+- MCU can be reprogrammed to fit any sensor system. 
+
+
